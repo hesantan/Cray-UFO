@@ -58,7 +58,7 @@ namespace Assets.TutorialInfo.Scripts
 		}
 
 		// open the stored URL for this content in a web browser
-		public void LaunchTutorial()
+		public void LaunchProjectSite()
 		{
 			Application.OpenURL (Url);
 		}

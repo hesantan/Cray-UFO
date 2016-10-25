@@ -14,14 +14,20 @@ namespace Assets.Scripts
 
 		private Rigidbody2D _rigidbody2D;
 		private int _count;
+		private string _collectiablesTag;
+		private int _totalNumberOfCollectibles;
 
 		/// <summary>
 		/// 
 		/// </summary>
 		private void Start()
 		{
+			transform.localPosition = new Vector3(Random.Range(-11, 11), Random.Range(-11, 11), 0);
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_count = 0;
+			_collectiablesTag = "PickUp";
+			_totalNumberOfCollectibles = GameObject.FindGameObjectsWithTag(_collectiablesTag).Length;
+
 			WinText.text = "";
 			SetCountText();
 		}
@@ -34,6 +40,7 @@ namespace Assets.Scripts
 			var moveHorizontal = Input.GetAxis("Horizontal");
 			var moveVertical = Input.GetAxis("Vertical");
 			var movement = new Vector2(moveHorizontal, moveVertical);
+
 			_rigidbody2D.AddForce(movement * Speed);
 		}
 
@@ -43,7 +50,7 @@ namespace Assets.Scripts
 		/// <param name="other"></param>
 		private void OnTriggerEnter2D(Component other)
 		{
-			if (!other.gameObject.CompareTag("PickUp"))
+			if (!other.gameObject.CompareTag(_collectiablesTag))
 			{
 				return;
 			}
@@ -60,7 +67,7 @@ namespace Assets.Scripts
 		{
 			CountText.text = "Count: " + _count;
 
-			if (_count >= 12)
+			if (_count >= _totalNumberOfCollectibles)
 			{
 				WinText.text = "You win!";
 			}
