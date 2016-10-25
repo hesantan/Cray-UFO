@@ -1,2 +1,2 @@
-# UFO_Game
-Beginners tutorial for Unity UFO 2D game
+# Cray-UFO
+Based on the beginners UFO 2D game tutorial for Unity
