@@ -22,7 +22,6 @@ namespace Assets.Scripts
 		/// </summary>
 		private void Start()
 		{
-			transform.localPosition = new Vector3(Random.Range(-11, 11), Random.Range(-11, 11), 0);
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_count = 0;
 			_collectiablesTag = "PickUp";
