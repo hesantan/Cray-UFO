@@ -24,7 +24,6 @@ namespace Assets.TutorialInfo.Scripts
 		// string to store Prefs Key with name of preference for showing the overlay info
 		public static string ShowAtStartPrefsKey = "showLaunchScreen";
 
-
 		private void Awake()
 		{
 			// Check player prefs for show at start preference
@@ -43,7 +42,7 @@ namespace Assets.TutorialInfo.Scripts
 			}
 			else 
 			{
-				StartGame ();
+				StartGame();
 			}
 
 		}
@@ -60,14 +59,14 @@ namespace Assets.TutorialInfo.Scripts
 		// open the stored URL for this content in a web browser
 		public void LaunchProjectSite()
 		{
-			Application.OpenURL (Url);
+			Application.OpenURL(Url);
 		}
 
 		// continue to play, by ensuring the preference is set correctly, the overlay is not active, 
 		// and that the audio listener is enabled, and time scale is 1 (normal)
 		public void StartGame()
 		{
-			Overlay.SetActive (false);
+			Overlay.SetActive(false);
 			MainListener.enabled = true;
 			Time.timeScale = 1f;
 		}

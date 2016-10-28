@@ -11,8 +11,11 @@ namespace Assets.Scripts.Controllers
 		public float Speed;
 		public Text CountText;
 		public Text WinText;
+		public AudioClip CollectPickupAudio;
+		public AudioClip SuccessAudio;
 
 		private Rigidbody2D _rigidbody2D;
+		private AudioSource _audioSource;
 		private int _count;
 		private string _collectiablesTag;
 		private int _totalNumberOfCollectibles;
@@ -23,6 +26,7 @@ namespace Assets.Scripts.Controllers
 		private void Start()
 		{
 			_rigidbody2D = GetComponent<Rigidbody2D>();
+			_audioSource = GetComponent<AudioSource>();
 			_count = 0;
 			_collectiablesTag = "PickUp";
 			_totalNumberOfCollectibles = GameObject.FindGameObjectsWithTag(_collectiablesTag).Length;
@@ -54,6 +58,8 @@ namespace Assets.Scripts.Controllers
 				return;
 			}
 
+			_audioSource.clip = CollectPickupAudio;
+			_audioSource.Play();
 			other.gameObject.SetActive(false);
 			_count++;
 			SetCountText();
@@ -66,10 +72,14 @@ namespace Assets.Scripts.Controllers
 		{
 			CountText.text = "Count: " + _count;
 
-			if (_count >= _totalNumberOfCollectibles)
+			if (_count < _totalNumberOfCollectibles)
 			{
-				WinText.text = "You win!";
+				return;
 			}
+
+			_audioSource.clip = SuccessAudio;
+			_audioSource.Play();
+			WinText.text = "You win!";
 		}
 	}
 }

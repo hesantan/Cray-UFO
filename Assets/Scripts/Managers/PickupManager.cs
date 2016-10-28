@@ -1,6 +1,10 @@
-﻿using Assets.Scripts.Utilities;
+﻿using System;
+
+using Assets.Scripts.Utilities;
 
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Managers
 {
@@ -8,15 +12,23 @@ namespace Assets.Scripts.Managers
 	{
 		public GameObject PickupPrefab;
 		public GameObject PickupParent;
-		public int NumberOfPickups;
+		public int MinPickups;
+		public int MaxPickups;
 		public int PositionRange;
 
-		//private GameObject[] _pickups;
+		[HideInInspector]
+		public int NumberOfPickups;
+
+		private const int MinimunPickups = 10;
+		private const int MaximunPickups = 1000;
 
 		// Use this for initialization
 		private void Start ()
 		{
-			//_pickups = new GameObject[NumberOfPickups];
+			var minimumPickups = Math.Max(MinimunPickups, MinPickups);
+			var maximunPickups = Math.Min(MaximunPickups, MaxPickups) + 1;
+
+			NumberOfPickups = Random.Range(minimumPickups, maximunPickups);
 
 			for (var i = 0; i < NumberOfPickups; i++)
 			{
