@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8357b840f0c40b444b51cc76056d1765
-timeCreated: 1477631709
+timeCreated: 1477726091
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,11 +10,11 @@ TextureImporter:
     21300006: Wall_Right
     21300008: Corner_R_Top
     21300010: Wall_Top
-    21300012: Corner_L_Top
-    21300014: Wall_Left
+    21300012: Corner_Block
+    21300014: Wall_1x8
     21300016: Tiles_H_6
     21300018: Tiles_V_7
-    21300020: Titles_Block_6x6
+    21300020: Tiles_Block_7x7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -64,143 +64,39 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Corner_R_Bottom
-      rect:
-        serializedVersion: 2
-        x: 2851
-        y: 1
-        width: 328
-        height: 326
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wall_Bottom
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 0
-        width: 2523
-        height: 327
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Corner_L_Bottom
+      name: Corner_Block
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 328
-        height: 327
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wall_Right
-      rect:
-        serializedVersion: 2
-        x: 2851
-        y: 327
-        width: 328
-        height: 2510
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Corner_R_Top
-      rect:
-        serializedVersion: 2
-        x: 2851
-        y: 2837
-        width: 328
-        height: 327
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wall_Top
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 2837
-        width: 2524
-        height: 327
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Corner_L_Top
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2837
+        y: 2835
         width: 327
-        height: 327
+        height: 329
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wall_Left
+      name: Wall_1x8
       rect:
         serializedVersion: 2
         x: 0
-        y: 327
-        width: 328
-        height: 2510
+        y: 328
+        width: 327
+        height: 2507
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Tiles_H_6
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 327
-        width: 2162
-        height: 355
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tiles_V_7
-      rect:
-        serializedVersion: 2
-        x: 2490
-        y: 327
-        width: 361
-        height: 2510
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Titles_Block_6x6
+      name: Tiles_Block_7x7
       rect:
         serializedVersion: 2
         x: 327
-        y: 682
-        width: 2163
-        height: 2155
+        y: 328
+        width: 2524
+        height: 2507
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

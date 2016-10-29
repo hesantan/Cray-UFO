@@ -17,7 +17,7 @@ namespace Assets.Scripts.Controllers
 		private Rigidbody2D _rigidbody2D;
 		private AudioSource _audioSource;
 		private int _count;
-		private string _collectiablesTag;
+		private const string CollectiablesTag = "PickUp";
 		private int _totalNumberOfCollectibles;
 
 		/// <summary>
@@ -27,9 +27,7 @@ namespace Assets.Scripts.Controllers
 		{
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_audioSource = GetComponent<AudioSource>();
-			_count = 0;
-			_collectiablesTag = "PickUp";
-			_totalNumberOfCollectibles = GameObject.FindGameObjectsWithTag(_collectiablesTag).Length;
+			_totalNumberOfCollectibles = GameObject.FindGameObjectsWithTag(CollectiablesTag).Length;
 
 			WinText.text = "";
 			SetCountText();
@@ -53,7 +51,7 @@ namespace Assets.Scripts.Controllers
 		/// <param name="other"></param>
 		private void OnTriggerEnter2D(Component other)
 		{
-			if (!other.gameObject.CompareTag(_collectiablesTag))
+			if (!other.gameObject.CompareTag(CollectiablesTag))
 			{
 				return;
 			}

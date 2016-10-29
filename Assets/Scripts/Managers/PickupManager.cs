@@ -30,11 +30,21 @@ namespace Assets.Scripts.Managers
 
 			NumberOfPickups = Random.Range(minimumPickups, maximunPickups);
 
+			PlaceRandomPickups();
+		}
+	
+		// Update is called once per frame
+		private void Update () {
+	
+		}
+
+		private void PlaceRandomPickups()
+		{
 			for (var i = 0; i < NumberOfPickups; i++)
 			{
 				var pickupPrefab = Instantiate(
-					PickupPrefab, 
-					Randomizer.GetRandomPosition(PositionRange, true, true, false), 
+					PickupPrefab,
+					Randomizer.GetRandomPosition(PositionRange, true, true, false),
 					Randomizer.GetRandomRotation(true, true, false)
 				) as GameObject;
 
@@ -43,11 +53,6 @@ namespace Assets.Scripts.Managers
 					pickupPrefab.transform.SetParent(PickupParent.transform);
 				}
 			}
-		}
-	
-		// Update is called once per frame
-		private void Update () {
-	
 		}
 	}
 }

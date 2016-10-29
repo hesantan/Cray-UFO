@@ -5,6 +5,7 @@ namespace Assets.Scripts.Controllers
 	public class CameraController : MonoBehaviour {
 
 		public GameObject Player;
+
 		private Vector3 _offset;
 
 		/// <summary>
