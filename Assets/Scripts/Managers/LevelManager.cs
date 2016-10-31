@@ -1,6 +1,4 @@
-﻿using System;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 using Random = UnityEngine.Random;
 
@@ -8,15 +6,14 @@ namespace Assets.Scripts.Managers
 {
 	public class LevelManager : MonoBehaviour
 	{
-
+		[Range(1,10)]
 		public int MinSizeMultiplier;
+
+		[Range(1, 10)]
 		public int MaxSizeMultiplier;
 
 		[HideInInspector]
 		public int SizeMultiplier;
-
-		private const int MinimunSizeMultiplier = 1;
-		private const int MaximunSizeMultiplier = 10;
 
 		private const float TitlesBlockSize = 28.6f;
 		private const float WallSize = 15.1f;
@@ -24,10 +21,7 @@ namespace Assets.Scripts.Managers
 
 		// Use this for initialization
 		private void Start () {
-			var minimumSizeMultiplier = Math.Max(MinimunSizeMultiplier, MinSizeMultiplier);
-			var maximunSizeMultiplier = Math.Min(MaximunSizeMultiplier, MaxSizeMultiplier) + 1;
-
-			SizeMultiplier = Random.Range(minimumSizeMultiplier, maximunSizeMultiplier);
+			SizeMultiplier = Random.Range(MinSizeMultiplier, MaxSizeMultiplier + 1);
 		}
 
 		// Update is called once per frame

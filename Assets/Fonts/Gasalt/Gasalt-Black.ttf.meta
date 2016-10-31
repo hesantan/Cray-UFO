@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7e1ea56eb3325224c87a757bd4e4bdfb
-timeCreated: 1477630817
+guid: 10656fc63f8c89444a2ed896d512443e
+timeCreated: 1477885373
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,9 +10,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Roboto Condensed
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: b20f139c373fa4555a05cdd0036dfa44, type: 3}
+  - Gasalt
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

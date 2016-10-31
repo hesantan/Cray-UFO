@@ -24,8 +24,12 @@ namespace Assets.TutorialInfo.Scripts
 		// string to store Prefs Key with name of preference for showing the overlay info
 		public static string ShowAtStartPrefsKey = "showLaunchScreen";
 
+		private AudioSource _audioSource;
+
 		private void Awake()
 		{
+			_audioSource = GetComponent<AudioSource>();
+
 			// Check player prefs for show at start preference
 			if (PlayerPrefs.HasKey(ShowAtStartPrefsKey))
 			{
@@ -69,6 +73,7 @@ namespace Assets.TutorialInfo.Scripts
 			Overlay.SetActive(false);
 			MainListener.enabled = true;
 			Time.timeScale = 1f;
+			_audioSource.Play();
 		}
 
 		// set the boolean storing show at start status to equal the UI toggle's status

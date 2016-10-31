@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f65bdf6ab7a55424c9626a35af21197a
-timeCreated: 1477630817
+guid: 3e210384a03e64e4e87514e54d4323f6
+timeCreated: 1477885373
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,9 +10,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Roboto
+  - SF Atarian System
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 826c6ae75667a440f8d925b3ff94a03f, type: 3}
+  - {fileID: 12800000, guid: 1a69c7855b95e1a4595f0c18409f4f77, type: 3}
+  - {fileID: 12800000, guid: 02370bd6b9a3cb84aba2bbe654c7d515, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

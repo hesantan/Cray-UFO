@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Assets.Scripts.Managers;
+
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
@@ -9,16 +10,11 @@ namespace Assets.Scripts.Controllers
 	public class PlayerController : MonoBehaviour
 	{
 		public float Speed;
-		public Text CountText;
-		public Text WinText;
 		public AudioClip CollectPickupAudio;
-		public AudioClip SuccessAudio;
 
 		private Rigidbody2D _rigidbody2D;
 		private AudioSource _audioSource;
-		private int _count;
 		private const string CollectiablesTag = "PickUp";
-		private int _totalNumberOfCollectibles;
 
 		/// <summary>
 		/// 
@@ -27,10 +23,6 @@ namespace Assets.Scripts.Controllers
 		{
 			_rigidbody2D = GetComponent<Rigidbody2D>();
 			_audioSource = GetComponent<AudioSource>();
-			_totalNumberOfCollectibles = GameObject.FindGameObjectsWithTag(CollectiablesTag).Length;
-
-			WinText.text = "";
-			SetCountText();
 		}
 
 		/// <summary>
@@ -56,28 +48,12 @@ namespace Assets.Scripts.Controllers
 				return;
 			}
 
+			other.gameObject.SetActive(false);
+
+			GameManager.Score++;
+
 			_audioSource.clip = CollectPickupAudio;
 			_audioSource.Play();
-			other.gameObject.SetActive(false);
-			_count++;
-			SetCountText();
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		private void SetCountText()
-		{
-			CountText.text = "Count: " + _count;
-
-			if (_count < _totalNumberOfCollectibles)
-			{
-				return;
-			}
-
-			_audioSource.clip = SuccessAudio;
-			_audioSource.Play();
-			WinText.text = "You win!";
 		}
 	}
 }
