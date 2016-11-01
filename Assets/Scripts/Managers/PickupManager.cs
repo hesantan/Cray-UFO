@@ -43,7 +43,7 @@ namespace Assets.Scripts.Managers
 				var pickupPrefab = Instantiate(
 					PickupPrefab,
 					Randomizer.GetRandomPosition(PositionRange, true, true, false),
-					Randomizer.GetRandomRotation(true, true, false)
+					Randomizer.GetRandomRotation(false, false)
 				) as GameObject;
 
 				if (pickupPrefab != null)
