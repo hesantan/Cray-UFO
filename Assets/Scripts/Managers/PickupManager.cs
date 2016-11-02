@@ -12,28 +12,25 @@ namespace Assets.Scripts.Managers
 		public GameObject PickupParent;
 
 		[Range(10, 500)]
-		public int MinPickups;
-
-		[Range(10, 500)]
 		public int MaxPickups;
-
-		public int PositionRange;
 
 		[HideInInspector]
 		public int NumberOfPickups;
 
+		private int _positionRange;
+
 		// Use this for initialization
 		private void Start ()
 		{
-			EnsurePickupCounts();
-			NumberOfPickups = Random.Range(MinPickups, MaxPickups + 1);
+			_positionRange = GetPositionRange();
+
+			NumberOfPickups = 
+				Random.Range(
+					10 * BoardManager.SizeMultiplier, 
+					(MaxPickups + 1) * BoardManager.SizeMultiplier
+				);
 
 			PlaceRandomPickups();
-		}
-	
-		// Update is called once per frame
-		private void Update () {
-	
 		}
 
 		private void PlaceRandomPickups()
@@ -42,7 +39,7 @@ namespace Assets.Scripts.Managers
 			{
 				var pickupPrefab = Instantiate(
 					PickupPrefab,
-					Randomizer.GetRandomPosition(PositionRange, true, true, false),
+					Randomizer.GetRandomPosition(_positionRange, true, true, false),
 					Randomizer.GetRandomRotation(false, false)
 				) as GameObject;
 
@@ -53,13 +50,9 @@ namespace Assets.Scripts.Managers
 			}
 		}
 
-		private void EnsurePickupCounts()
+		private static int GetPositionRange()
 		{
-			var minPickups = Mathf.Min(MinPickups, MaxPickups);
-			var maxPickups = Mathf.Max(MinPickups, MaxPickups);
-
-			MinPickups = minPickups;
-			MaxPickups = maxPickups;
+			return BoardManager.BoardSize / 2 - 2;
 		}
 	}
 }
